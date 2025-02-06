@@ -1,5 +1,4 @@
 import "@testing-library/jest-dom";
-
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import ProductForm from "../../app/components/ProductForm";
 import { Product } from "../../app/interface/product.interface";
@@ -24,7 +23,7 @@ describe("ProductForm Component", () => {
     rating: { rate: 4.5, count: 20 },
   };
 
-  it("renders the form with product data when product is provided", () => {
+  test("renders the form with product data when product is provided", () => {
     renderProductForm({
       open: true,
       onClose: jest.fn(),
@@ -43,7 +42,7 @@ describe("ProductForm Component", () => {
     );
   });
 
-  it("renders the form with empty fields when no product is provided", () => {
+  test("renders the form with empty fields when no product is provided", () => {
     renderProductForm({
       open: true,
       onClose: jest.fn(),
@@ -58,7 +57,7 @@ describe("ProductForm Component", () => {
     expect(screen.getByLabelText(/Image URL/)).toHaveValue("");
   });
 
-  it("shows an error message if the price is invalid", async () => {
+  test("shows an error message if the price is invalid", async () => {
     renderProductForm({
       open: true,
       onClose: jest.fn(),
@@ -74,7 +73,7 @@ describe("ProductForm Component", () => {
     await waitFor(() => expect(screen.getByText("Price")).toBeInTheDocument());
   });
 
-  it("resets the form when the dialog is closed", async () => {
+  test("resets the form when the dialog is closed", async () => {
     renderProductForm({
       open: true,
       onClose: jest.fn(),

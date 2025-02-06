@@ -1,8 +1,8 @@
 import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
+import { useRouter } from "next/navigation";
 import ProductCard from "../../app/components/ProductCard";
 import { Product } from "../../app/interface/product.interface";
-import { useRouter } from "next/navigation";
 
 jest.mock("next/navigation", () => ({
   useRouter: jest.fn(),

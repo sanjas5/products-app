@@ -1,8 +1,8 @@
 import "@testing-library/jest-dom";
+import { redirect } from "next/navigation";
 import { render, screen, fireEvent } from "@testing-library/react";
 import ProductDetails from "../../app/components/ProductDetails";
 import { Product } from "../../app/interface/product.interface";
-import { redirect } from "next/navigation";
 
 jest.mock("next/navigation", () => ({
   redirect: jest.fn(),
